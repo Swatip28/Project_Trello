@@ -6,7 +6,7 @@ export const getListByID = async (_root,args,context) => {
 try{
     const getListByID =  await prisma.card.groupBy({
         by : ['ListId'],
-        where : {Id : id}
+        where : {ListId : id}
     })
     listByIdResponseObj = {code :200 , message: "Details Fetched", List : getListByID}
     return listByIdResponseObj
